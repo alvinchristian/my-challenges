@@ -13,6 +13,6 @@ This repository contains CTF challenges organized by competition.
 
 | Name | Category | Tag | Points | Solves |
 |------|----------|-----|--------|-------|
-| - | - | - | - | - |
+| [Baby Foren](TCP1P-Ramadan-Special-2025/baby-foren) | - | - | - | - |
 
 <!-- TOC_END -->
