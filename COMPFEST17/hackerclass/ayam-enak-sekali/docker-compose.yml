@@ -1,0 +1,12 @@
+services:
+    big-ahh-rsa:
+      build: .
+      ports:
+        - 7103:1337
+      container_name: ayam-enak-sekali
+      restart: on-failure
+      deploy:
+        resources:
+          limits:
+            cpus: '0.25'
+            memory: 256M
