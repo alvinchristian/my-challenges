@@ -13,8 +13,8 @@ COMPFEST17{i_hope_you_enjoy_this_mini_boot2root_with_pickle_insecure_deserializa
 ## Description
 pickle as a service
 
-Category: Web
-Solves: 133
+Category: Web<br />
+Solves: 133<br />
 Points: 100/500
 
 ## Difficulty
