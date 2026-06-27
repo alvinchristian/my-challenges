@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f6fa; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); width: 360px; }
+    input, button { width: 100%; padding: 10px; margin: 8px 0; border-radius: 6px; border: 1px solid #ccc; }
+    button { background: #1976d2; color: white; border: none; cursor: pointer; }
+    button:hover { background: #135ba1; }
+    p { text-align: center; }
+    a { color: #1976d2; text-decoration: none; display: block; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Create Report</h2>
+    <form method="POST" action="/admin/create_report">
+      <input name="report_name" placeholder="report name" />
+      <button type="submit">Create</button>
+    </form>
+    <a href="/profile/{{ user_id }}">← Back to Profile</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+
+services:
+  web:
+    build: .
+    container_name: simple-web
+    ports:
+      - "7400:5000"
+    environment:
+      FLAG: "NETSOS{test_flag}"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M

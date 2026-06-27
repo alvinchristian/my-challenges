@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Users</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { font-size: 1.4rem; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 0.4rem 0; border-bottom: 1px solid #eee; }
+    #status { color: #666; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Registered Users</h1>
+  <div id="status">Loading users…</div>
+  <ul id="users-list"></ul>
+
+  <script>
+    async function loadUsers() {
+      try {
+        const res = await fetch('/users', { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+        const data = await res.json();
+        if (!data.success) throw new Error('Failed to fetch users');
+        const ul = document.getElementById('users-list');
+        ul.innerHTML = '';
+        data.users.forEach(user => {
+          const li = document.createElement('li');
+          li.textContent = user.username; 
+          ul.appendChild(li);
+        });
+        document.getElementById('status').textContent = `Total users: ${data.users.length}`;
+      } catch (err) {
+        console.error(err);
+        document.getElementById('status').textContent = 'Error loading users.';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadUsers);
+  </script>
+</body>
+</html>

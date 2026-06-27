@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      width: 360px;
+      text-align: center;
+    }
+    button {
+      background: #d32f2f;
+      border: none;
+      padding: 10px;
+      color: white;
+      width: 100%;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover { background: #b71c1c; }
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: #1976d2;
+      text-decoration: none;
+    }
+    #cat-img {
+      margin-top: 15px;
+      max-width: 100%;
+      border-radius: 6px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Hi {{ username }}!</h2>
+
+    {% if username == 'admint' %}
+      <a href="/admin/create_report">Create report</a>
+    {% endif %}
+
+    <!-- ✅ Cat Button -->
+    <button onclick="showCat()">Show me a cat 🐱</button>
+    <img id="cat-img">
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    async function logout() {
+      await fetch("/logout", { method: "POST", credentials: "same-origin" });
+      window.location.href = "/";
+    }
+
+    async function showCat() {
+      const res = await fetch("/random_cat");
+      const data = await res.json();
+      if (data.success) {
+        const img = document.getElementById("cat-img");
+        img.src = data.cat_url;
+        img.style.display = "block";
+      } else {
+        alert("😿 Could not fetch a cat image.");
+      }
+    }
+  </script>
+</body>
+</html>

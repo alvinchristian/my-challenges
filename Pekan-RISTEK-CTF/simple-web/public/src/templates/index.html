@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login or Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+    h2 { text-align: center; }
+    input, button {
+      width: 100%; padding: 10px; margin: 8px 0;
+      border-radius: 6px; border: 1px solid #ccc;
+    }
+    button { background: #1976d2; color: white; border: none; cursor: pointer; }
+    button:hover { background: #135ba1; }
+    a { color: #1976d2; text-decoration: none; font-size: 0.9rem; }
+    .msg { height: 1.2rem; text-align: center; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2 id="title">Register</h2>
+    <input id="username" placeholder="username" />
+    <input id="password" type="password" placeholder="password" />
+    <button id="submit">Register</button>
+    <p class="msg" id="msg"></p>
+    <a href="#" id="toggle">Already have an account? Login</a>
+  </div>
+
+  <script>
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    const submit = document.getElementById('submit');
+    const toggle = document.getElementById('toggle');
+    const title = document.getElementById('title');
+    const msg = document.getElementById('msg');
+    let isLogin = false;
+
+    toggle.onclick = (e) => {
+      e.preventDefault();
+      isLogin = !isLogin;
+      title.textContent = isLogin ? "Login" : "Register";
+      submit.textContent = isLogin ? "Login" : "Register";
+      toggle.textContent = isLogin ? "Don't have an account? Register" : "Already have an account? Login";
+      msg.textContent = "";
+    };
+
+    submit.onclick = async () => {
+      const u = username.value.trim();
+      const p = password.value.trim();
+      if (!u || !p) {
+        msg.style.color = "red";
+        msg.textContent = "Fill both fields.";
+        return;
+      }
+      const res = await fetch(isLogin ? "/login" : "/register", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: u, password: p })
+      });
+      const data = await res.json();
+      if (data.success) {
+        msg.style.color = "green";
+        msg.textContent = data.message || "OK";
+        if (data.redirect) window.location.href = data.redirect;
+      } else {
+        msg.style.color = "red";
+        msg.textContent = data.error || "Error";
+      }
+    };
+  </script>
+</body>
+</html>

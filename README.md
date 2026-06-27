@@ -13,6 +13,13 @@ This repository contains CTF challenges organized by competition.
 | [Custom Parameters](COMPFEST17/qual/custom-parameters) | qual | Crypto <br /> | RSA, wienner attack | medium-hard |
 | [Meowrine Corp](COMPFEST17/qual/meowrine-corp) | qual | Forensics <br /> | pcap, evtx, persistance, powershell deobfuscation | easy-medium |
 
+## Pekan RISTEK CTF
+
+| Name | Category | Tag | Difficulty |
+|------|----------|-----|--------|
+| [Ingatan](Pekan-RISTEK-CTF/ingatan) | Forensics <br /> | Memory analysis, volatility | easy-medium |
+| [Simple Web](Pekan-RISTEK-CTF/simple-web) | Web <br /> | UUIDv1, Flask, code injection | easy |
+
 ## TCP1P Ramadan Special 2025
 
 | Name | Category | Tag | Difficulty |
