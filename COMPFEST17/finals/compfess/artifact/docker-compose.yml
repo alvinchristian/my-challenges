@@ -1,0 +1,59 @@
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: compfess
+      POSTGRES_USER: compfess
+      POSTGRES_PASSWORD: compfess
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U compfess -d compfess"]
+      interval: 5s
+      timeout: 5s
+
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SSH_PASSWORD: {SSH_PASSWORD}
+        ADMIN_PASSWORD: {SECRET}
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DJANGO_SECRET_KEY: "change-me-in-.env"
+      DATABASE_URL: "postgresql://compfess:compfess@db:5432/compfess"
+      DEBUG: "0"
+      ADMIN_USERNAME: "haiakuadmintcompfess"
+      ADMIN_EMAIL: "admint@compfess.com"
+    ports:
+      - "{SSH_PORT}:22"
+      - "{EXPOSE_PORT_0}:8000"
+    volumes:
+      - ./flag:/flag:ro
+      - ./src:/app/src
+    healthcheck:
+      test: ["CMD-SHELL", "su -s /bin/sh -c 'python3 /app/src/manage.py test main > /dev/null 2>&1 || exit 1' django"]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+
+  checker:
+    build: 
+      context: agent
+      dockerfile: Dockerfile
+    environment:
+      - TEAM_ID={TEAM_ID}
+      - CHALLENGE_SLUG={CHALLENGE_SLUG}
+      - SERVICE_SECRET={SECRET}
+    depends_on:
+      - web
+    volumes:
+      - ./flag:/flag:ro
+      - ./src:/app/src:ro
+
+volumes:
+  dbdata:
