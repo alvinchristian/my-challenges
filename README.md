@@ -17,10 +17,10 @@ This repository contains CTF challenges organized by competition.
 
 | Name | Category | Tag | Difficulty |
 |------|----------|-----|--------|
-| [Csaas](Oprec NETSOS/CSaaS) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
-| [Kambing](Oprec NETSOS/kambing) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
-| [Mercy](Oprec NETSOS/mercy) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
-| [Secure Coding](Oprec NETSOS/secure-coding) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Medium |
+| [Csaas](Oprec-NETSOS/CSaaS) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
+| [Kambing](Oprec-NETSOS/kambing) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
+| [Mercy](Oprec-NETSOS/mercy) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
+| [Secure Coding](Oprec-NETSOS/secure-coding) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Medium |
 
 ## Pekan RISTEK CTF
 
