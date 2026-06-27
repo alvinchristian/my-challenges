@@ -16,7 +16,7 @@ A hacker recently got access to the computer of a high ranking admiral of the me
 Category: Forensics <br />
 
 ## Difficulty
-Tingkat kesulitan soal: easy-medium
+easy-medium
 
 ## Hints
 * hint 1
