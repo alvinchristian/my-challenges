@@ -1,0 +1,12 @@
+services:
+  simple-calculator:
+    build: .
+    restart: always
+    ports:
+      - 1337:9999
+    read_only: true
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 256M

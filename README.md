@@ -13,6 +13,15 @@ This repository contains CTF challenges organized by competition.
 | [Custom Parameters](COMPFEST17/qual/custom-parameters) | qual | Crypto <br /> | RSA, wienner attack | medium-hard |
 | [Meowrine Corp](COMPFEST17/qual/meowrine-corp) | qual | Forensics <br /> | pcap, evtx, persistance, powershell deobfuscation | easy-medium |
 
+## Oprec NETSOS
+
+| Name | Category | Tag | Difficulty |
+|------|----------|-----|--------|
+| [Csaas](Oprec-NETSOS/CSaaS) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
+| [Kambing](Oprec-NETSOS/kambing) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
+| [Mercy](Oprec-NETSOS/mercy) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
+| [Secure Coding](Oprec-NETSOS/secure-coding) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Medium |
+
 ## Pekan RISTEK CTF
 
 | Name | Category | Tag | Difficulty |

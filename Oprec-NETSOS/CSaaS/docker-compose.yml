@@ -1,0 +1,12 @@
+services:
+    csaas:
+      build: .
+      ports:
+        - 7103:8080
+      container_name: csaas
+      restart: on-failure
+      deploy:
+        resources:
+          limits:
+            cpus: '2'
+            memory: 512M
