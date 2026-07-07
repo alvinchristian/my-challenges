@@ -1,1 +1,0 @@
-NETSOS{maybe_you_should_try_to_solve_crypto_challs_yourself_instead}
