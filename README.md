@@ -1,7 +1,7 @@
 <!-- TOC_START -->
-# CTF Challenges
+# My CTF Challenges
 
-This repository contains CTF challenges organized by competition.
+This repository contains a list CTF challenges I've created for various competitions.
 
 
 ## COMPFEST18
