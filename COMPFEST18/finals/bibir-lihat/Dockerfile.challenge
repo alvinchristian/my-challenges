@@ -1,0 +1,17 @@
+FROM pwn.red/jail
+
+COPY --from=debian:sid-slim@sha256:54f7a23f03be1e9fe2849c61a7455588ea29b84c1659440f8ece2aea4c9871af / /srv
+
+COPY ./src/chall /srv/app/chall
+COPY ./src/flag.txt /srv/app/flag.txt
+
+RUN chmod 755 /srv/app/chall && \
+    chmod 444 /srv/app/flag.txt && \
+    ln -s /app/chall /srv/app/run
+
+ENV JAIL_TIME=60
+ENV JAIL_MEM=64M
+ENV JAIL_PIDS=16
+ENV JAIL_CPU=100
+
+EXPOSE 5000

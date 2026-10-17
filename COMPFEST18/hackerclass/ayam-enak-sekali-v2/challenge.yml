@@ -1,0 +1,94 @@
+# This file represents the base specification of your challenge. It is used by
+# other tools to install and deploy your challenge.
+
+# Required sections
+name: "Ayam Enak Sekali v2"
+author: "Karev"
+
+# Select a category from:
+# - pwn
+# - web
+# - osint
+# - crypto
+# - forensics
+# - reverse
+# - misc
+category: Cryptography 
+
+# This is the challenge description. Make sure you include the
+# necessary URLs / netcat strings here.
+# Constants:
+# {{ IP_SERVER }} to get service IP address
+# {{ PORT }} to get service port
+# remove {{ IP_SERVER }} and {{ PORT }}  if the challenge is a container category
+description: "Ayam enak sekali from last year's hackerclass is back"
+
+# Flags specify answers that your challenge use. You should generally provide
+# at least one.
+# Can be removed if unused
+# Accepts strings or dictionaries
+flags:
+  - COMPFEST18{oops_i_forgot_aes_works_on_blocks_not_the_whole_message_1e3f5b9c7d}
+
+# Tags are used to classify your challenge with topics. You should provide at
+# least one.
+# Can be removed if unused
+# Accepts strings
+# tags:
+#   - web
+#   - sandbox
+#   - js
+
+# # Hints are used to give players a way to buy or have suggestions. They are not
+# # required but can be nice.
+# # Default value: cost = 0, state = "visible"
+# # Can be removed if unused
+# # Accepts dictionaries
+# hints:
+#   - { content: "This hint costs points", cost: 10 }
+#   - { content: "Not published hint", cost: 0, state: "hidden" }
+
+# Link to problem attachment for participants
+# Can be removed if unused
+# Accepts strings
+# attachment: link_to_attachment
+
+##############
+#  BAGIAN TC #
+##############
+
+# This is the number of points awarded for the challenge.
+value: 500
+type: dynamic # dynamic, static, or container
+
+# Number of solves it takes to reach the minimum value.
+decay: 20
+
+decay-function: logarithmic # logarithmic or linear 
+
+# Minimum value.
+minimum: 100
+
+# Provide paths to files from the same directory that this file is in
+# Accepts strings
+files:
+  - public/chall.py
+
+# The state of the challenge.
+# May be "visible" or "hidden".
+# It is "visible" by default.
+state: hidden
+
+# The ports to expose. The target port will be used to access the deployed container. for container challenges, remove target port and container port = internal port
+expose:
+  containerPort: 1337
+  targetPort: 4000
+
+connection_info: "nc {{ IP_SERVER }} {{ PORT }}"
+
+# only for container challenges, remove for other type of challenges
+
+# image: docker-image:latest # docker image for the challenge
+# connection: http # http or tcp
+# scoring-type: standard # standard or dynamic, if dynamic follow the parameters above (value, decay, decay function, minimum value)
+# alive-time: 60 # container alive time, 

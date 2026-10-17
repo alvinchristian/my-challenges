@@ -1,0 +1,12 @@
+services:
+    ayam-enak-sekaliv2:
+      build: .
+      ports:
+        - 4000:1337
+      container_name: ayam-enak-sekaliv2
+      restart: on-failure
+      deploy:
+        resources:
+          limits:
+            cpus: '0.25'
+            memory: 256M

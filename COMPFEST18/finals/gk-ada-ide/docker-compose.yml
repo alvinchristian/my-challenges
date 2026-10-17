@@ -1,0 +1,12 @@
+services:
+    idk:
+      build: .
+      ports:
+        - 3321:8080
+      container_name: idk
+      restart: on-failure
+      deploy:
+        resources:
+          limits:
+            cpus: '0.25'
+            memory: 256M

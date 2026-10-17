@@ -11,3 +11,8 @@ Category: Forensics
 
 ## Description
 My student submitted his homework but I can't open it? Can you help me?
+
+## Difficulty
+baby
+
+Category: Forensics <br />

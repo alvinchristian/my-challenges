@@ -1,0 +1,15 @@
+services:
+  challenge:
+    build: .
+    ports:
+      - "5200:5000"
+
+    privileged: true
+
+    restart: unless-stopped
+
+    environment:
+      JAIL_TIME: "60"
+      JAIL_MEM: "64M"
+      JAIL_PIDS: "16"
+      JAIL_CPU: "100"

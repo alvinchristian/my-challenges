@@ -3,6 +3,22 @@
 
 This repository contains CTF challenges organized by competition.
 
+
+## COMPFEST18
+
+| Name | Stage | Category | Tag | Difficulty |
+|------|-------|----------|-----|--------|
+| [Bibir Lihat](COMPFEST18/finals/bibir-lihat) | finals | - | - | - |
+| [Gk Ada Ide](COMPFEST18/finals/gk-ada-ide) | finals | - | - | - |
+| [Hacked](COMPFEST18/finals/hacked) | finals | - | - | - |
+| [Pqc](COMPFEST18/finals/pqc) | finals | - | - | - |
+| [Rop](COMPFEST18/finals/ROP) | finals | - | - | - |
+| [Soc](COMPFEST18/finals/SOC) | finals | - | - | - |
+| [Ayam Enak Sekali V2](COMPFEST18/hackerclass/ayam-enak-sekali-v2) | hackerclass | - | - | - |
+| [Rsa](COMPFEST18/hackerclass/rsa) | hackerclass | - | - | - |
+| [Intern](COMPFEST18/quals/intern) | quals | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | hard - insane |
+| [Jacobian As A Service](COMPFEST18/quals/jacobian-as-a-service) | quals | - | - | - |
+
 ## COMPFEST17
 
 | Name | Stage | Category | Tag | Difficulty |
@@ -17,10 +33,10 @@ This repository contains CTF challenges organized by competition.
 
 | Name | Category | Tag | Difficulty |
 |------|----------|-----|--------|
-| [Csaas](Oprec-NETSOS/CSaaS) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
-| [Kambing](Oprec-NETSOS/kambing) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
-| [Mercy](Oprec-NETSOS/mercy) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Tingkat kesulitan soal: easy / easy-medium / medium / medium-hard / hard |
-| [Secure Coding](Oprec-NETSOS/secure-coding) | - | Tags dari soal pisahkan koma (e.g: tags1, tags2, tags3) | Medium |
+| [Csaas](Oprec-NETSOS/CSaaS) | Misc <br /> | jail | easy-medium |
+| [Kambing](Oprec-NETSOS/kambing) | Crypto <br /> | ACD, Truncated LCG | medium-hard |
+| [Mercy](Oprec-NETSOS/mercy) | Pwn <br /> | PCAP Analysis, keylogger, pyarmor deobfuscation | easy |
+| [Secure Coding](Oprec-NETSOS/secure-coding) | - | Format string, GOT overwrite | Medium |
 
 ## Pekan RISTEK CTF
 
@@ -33,6 +49,6 @@ This repository contains CTF challenges organized by competition.
 
 | Name | Category | Tag | Difficulty |
 |------|----------|-----|--------|
-| [Baby Foren](TCP1P-Ramadan-Special-2025/baby-foren) | Forensics | - | - |
+| [Baby Foren](TCP1P-Ramadan-Special-2025/baby-foren) | Forensics | - | baby |
 
 <!-- TOC_END -->
